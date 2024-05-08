@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/inicio/style.css" />
+  <link rel="stylesheet" href="/inicio/contacto/styles.css" />
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="icon" href="/images/logoUrban.png">
@@ -14,7 +15,7 @@
       <div class="cont-principal">
         <div class="cont-logo">
           <div class="direccion">
-            <h4><i class="fa fa-map-marker" aria-hidden="true" ></i> Av. Del Espacio 1234 <br> Gral. Agüero - San Luis</h4>
+            <h4> Av. Del Espacio 1234 <br> Gral. Agüero - San Luis</h4>
           </div>
           <div class="logo">
             <img src="/images/logoUrban.png" alt="logo urban" height="100px" width="100px" />
@@ -29,10 +30,10 @@
     <div class="cont-navBar">
       <div class="items">
         <nav>
-          <a href="./index.html">INICIO</a>
+          <a href="../index.html">INICIO</a>
           <a href="#">NOSOTROS</a>
           <a href="#">PRODUCTOS</a>
-          <a href="./contacto/contacto.html">CONTACTO</a>
+          <a href="./contacto.html">CONTACTO</a>
         </nav>
       </div>
       <div class="burger">
@@ -55,24 +56,60 @@
   </div>
   <div class="items-mobile">
     <nav>
-      <a href="./index.html">INICIO</a>
+      <a href="../index.html">INICIO</a>
       <a href="#">NOSOTROS</a>
       <a href="#">PRODUCTOS</a>
-      <a href="./contacto/contacto.html">CONTACTO</a>
+      <a href="./contacto.html">CONTACTO</a>
     </nav>
   </div>
-  </div>
-  <div class="carrusel">
-    <div class="carrusel-items">
-      <div class="carrusel-item"><img src="/images/principal3.png" alt=""></div>
-      <div class="carrusel-item"><img src="/images/principal1.png" alt=""></div>
-      <div class="carrusel-item"><img src="/images/principal2.png" alt=""></div>
-      <div class="carrusel-item"><img src="/images/principal4.png" alt=""></div>
-      <div class="carrusel-item"><img src="/images/principal5.png" alt=""></div>
-      <div class="carrusel-item"><img src="/images/principal6.png" alt=""></div>
-      <div class="carrusel-item"><img src="/images/principal7.png" alt=""></div>
+
+  <section class="container">
+    <div class="form-text form-line">
+        <h1>Servicio al Cliente</h1>
+        <h2>Contactenos:</h2>
     </div>
-  </div>
+    <p>Use nuestro formulario de contacto para asistencia rápida y personalizada.</p>
+    <div class="container-form">
+        <form class="form">
+            <div class="form-margin">
+                <label class="w-100">
+                    <span class="text-margin">* Nombre (Completo)</span>
+                    <div class="form-input flex">
+                        <input class="text-area" type="text" name="nombre" maxlength="100">
+                    </div>
+                </label>
+            </div>
+            <div class="form-margin">
+                <label class="w-100">
+                    <span class="text-margin">* Telefono (a 10 digitos)</span>
+                    <div class="form-input flex">
+                        <input class="text-area" type="tel" name="telefono" maxlength="10" minlength="10">
+                    </div>
+                </label>
+            </div>
+            <div class="form-margin">
+                <label class="w-100">
+                    <span class="text-margin">* Email</span>
+                    <div class="form-input flex">
+                        <input class="text-area" type="email" name="email">
+                    </div>
+                </label>
+            </div>
+            <div class="form-margin">
+                <label class="w-100">
+                    <span class="text-margin">* Comentarios</span>
+                    <div class="form-input flex">
+                        <textarea class="text-area" name="comentarios" rows="5"></textarea>
+                    </div>
+                </label>
+            </div>
+            <div class="button-center">
+                <input class="button w-100" type="button" value="Enviar">
+            </div>
+        </form>
+    </div>
+  </section>
+  
   <footer>
     <div class="footer">
       
@@ -92,10 +129,10 @@
       <div class="cont-links">
         <div class="links-footer">
             <h3><Strong>NAVEGACIÓN</Strong></h3>
-            <a href="#">Inicio</a>
+            <a href="../index.html">Inicio</a>
             <a href="#">Nosotros</a>
             <a href="#">Productos</a>
-            <a href="#">Contacto</a>
+            <a href="./contacto.html">Contacto</a>
         </div>
       </div>
       <div class="redes-footer">
@@ -109,7 +146,5 @@
       <p>&#xA9 copyright - 2024 - reservados los derechos - creado por @pablodalcaraz & @alanroycuevas </p>
     </div>
   </footer>
-  <script src="/inicio/functions.js"></script>
 </body>
-
 </html>

@@ -262,10 +262,12 @@ body,html{
 
 }
 
-.copyrigth{
+.copyright{
+    background-color: var(--negro);
     color: var(--sec);
     text-align: center;
     font-size: small;
+    padding: 3px;
     p{
         font-size: 10px;
     }
