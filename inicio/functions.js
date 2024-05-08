@@ -11,23 +11,21 @@ document.addEventListener('DOMContentLoaded', function(){
 const carrusel = document.querySelector('.carrusel-items');
 let interval = null;
 let velocidad = 1;
-
-// Actualizar `maximo` para que refleje la máxima posición de scroll hacia la derecha
 const getMaximo = () => carrusel.scrollWidth - carrusel.clientWidth;
 
 let maximo = getMaximo();
 
 const play = () => {
-   if (interval !== null) clearInterval(interval); // Limpiar el intervalo anterior si existe
+   if (interval !== null) clearInterval(interval); 
    interval = setInterval(function(){
     carrusel.scrollLeft += velocidad;
 
     if (carrusel.scrollLeft >= maximo) {
-        velocidad *= -1; // Cambia la dirección del scroll
-        carrusel.scrollLeft = maximo; // Corrige si se pasa del máximo
+        velocidad *= -1; 
+        carrusel.scrollLeft = maximo; 
     } else if (carrusel.scrollLeft <= 0) {
-        velocidad *= -1; // Cambia la dirección del scroll
-        carrusel.scrollLeft = 0; // Corrige si es menor que cero
+        velocidad *= -1; 
+        carrusel.scrollLeft = 0; 
     }
    }, 10);
 };
@@ -38,8 +36,6 @@ const stop = () => {
         interval = null;
     }
 };
-
-// Asegurarse de que `maximo` está siempre actualizado
 window.addEventListener('resize', () => {
     maximo = getMaximo();
 });
