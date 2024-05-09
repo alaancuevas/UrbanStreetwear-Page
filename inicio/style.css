@@ -232,7 +232,7 @@ h2{
 }
 .flecha {
   position: absolute; 
-  top: 50%; 
+  top: 35%;
   transform: translateY(-50%);
   cursor: pointer; 
   color: var(--negro);
