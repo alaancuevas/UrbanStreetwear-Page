@@ -218,6 +218,7 @@ h2{
 .carrusel-items{
     display: flex;
     overflow: hidden;
+    cursor: pointer;
 }
 .carrusel-item img{
     max-width: 250px;
@@ -237,7 +238,16 @@ h2{
   cursor: pointer; 
   color: var(--negro);
 }
-
+.flecha{
+    img{
+        width: 40px;
+        height: 35px;
+    }
+    img:hover{
+        color: var(--sec);
+        filter: drop-shadow(0 2px 5px #fff);
+    }
+}
 .flecha-izquierda {
   left: 20px; 
 }
@@ -299,7 +309,8 @@ h2{
 }
 .redes-footer a{
    display: grid;
-   margin: 15px;
+   margin-left: 25px;
+   margin-bottom: 6px;
    img:hover{
     filter: drop-shadow(0 2px 5px #ffd7ab);
    }
@@ -307,10 +318,10 @@ h2{
 .direccion-footer{
     display: none;
 }
+
 @media (max-width: 580px){
     .footer{
-        padding-left: 10px;
-        padding-right: 10px;
+        padding: 20px;
         a, p, h3{
             font-size: 13px;
         }
@@ -318,6 +329,15 @@ h2{
     .direccion-footer{
         font-size: 10px;
         display: flex;
+        margin-top: 12px;
+    }
+    .atencion{
+        margin-left: 20px;
+    }
+    
+    .redes-footer a img{
+        margin-bottom: 15px;
+        margin-right: 20px;
     }
 
 }

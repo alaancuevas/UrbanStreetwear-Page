@@ -36,6 +36,10 @@ const stop = () => {
         interval = null;
     }
 };
+const cambiarDireccion = (dir) => {
+    velocidad = Math.abs(velocidad) * dir; 
+    play();
+};
 window.addEventListener('resize', () => {
     maximo = getMaximo();
 });

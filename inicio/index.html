@@ -11,7 +11,7 @@
 </head>
 <body>
     <div>
-      <div class="cont-principal">
+      <div class="cont-principal"> <!--Logo presentación-->
         <div class="cont-logo">
           <div class="direccion">
             <h4><i class="fa fa-map-marker" aria-hidden="true" ></i> Av. Del Espacio 1234 <br> Gral. Agüero - San Luis</h4>
@@ -25,7 +25,7 @@
             <a href="#"><img src="/images/gorjeo.png" alt="logo x"></a>
           </div>
         </div>
-  <div class="navBar">
+  <div class="navBar"> <!--Barra de navegación-->
     <div class="cont-navBar">
       <div class="items">
         <nav>
@@ -61,7 +61,7 @@
       <a href="../contacto/contacto.html">Contacto</a>
     </nav>
   </div>
-  <div class="carrusel"><div class="carrusel-items">
+  <div class="carrusel"><div class="carrusel-items"> <!--carrusel-->
       <div class="carrusel-item"><img src="/images/principal3.png" alt=""></div>
       <div class="carrusel-item"><img src="/images/principal1.png" alt=""></div>
       <div class="carrusel-item"><img src="/images/principal2.png" alt=""></div>
@@ -71,16 +71,14 @@
       <div class="carrusel-item"><img src="/images/principal7.png" alt=""></div>
     </div>
     <div>
-      <svg xmlns="http://www.w3.org/2000/svg" class="flecha flecha-izquierda icon icon-tabler icon-tabler-arrow-badge-left-filled" width="60" height="60" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-      <path d="M17 6h-6a1 1 0 0 0 -.78 .375l-4 5a1 1 0 0 0 0 1.25l4 5a1 1 0 0 0 .78 .375h6l.112 -.006a1 1 0 0 0 .669 -1.619l-3.501 -4.375l3.5 -4.375a1 1 0 0 0 -.78 -1.625z" stroke-width="0" fill="currentColor" />
-    </svg>
-    <svg xmlns="http://www.w3.org/2000/svg" class="flecha flecha-derecha icon icon-tabler icon-tabler-arrow-badge-right-filled" width="60" height="60" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-      <path d="M7 6l-.112 .006a1 1 0 0 0 -.669 1.619l3.501 4.375l-3.5 4.375a1 1 0 0 0 .78 1.625h6a1 1 0 0 0 .78 -.375l4 -5a1 1 0 0 0 0 -1.25l-4 -5a1 1 0 0 0 -.78 -.375h-6z" stroke-width="0" fill="currentColor" />
-    </svg>
+      <div class="flecha flecha-izquierda" onclick="cambiarDireccion(1)">
+      <img src="/images/flecha-izquierda.png" alt="flecha izquierda">
+    </div>
+    <div class="flecha flecha-derecha" onclick="cambiarDireccion(-1)">
+    <img src="/images/flecha-derecha.png" alt="flecha derecha">
   </div>
-  <footer>
+  </div>
+  <footer> <!--pié de página-->
     <div class="footer">
       
       <div class="logo-footer">
