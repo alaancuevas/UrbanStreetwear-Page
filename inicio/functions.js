@@ -8,7 +8,10 @@ document.addEventListener('DOMContentLoaded', function(){
 })
 })
 
+
 const carrusel = document.querySelector('.carrusel-items');
+const imagenes= carrusel.getElementsByClassName('carrusel-item');
+
 let interval = null;
 let velocidad = 1;
 const getMaximo = () => carrusel.scrollWidth - carrusel.clientWidth;
@@ -17,7 +20,7 @@ let maximo = getMaximo();
 
 const play = () => {
    if (interval !== null) clearInterval(interval); 
-   interval = setInterval(function(){
+   interval = setInterval(() => {
     carrusel.scrollLeft += velocidad;
 
     if (carrusel.scrollLeft >= maximo) {
@@ -36,19 +39,44 @@ const stop = () => {
         interval = null;
     }
 };
-const cambiarDireccion = (dir) => {
-    velocidad = Math.abs(velocidad) * dir; 
-    play();
-};
+
 window.addEventListener('resize', () => {
     maximo = getMaximo();
 });
 
-carrusel.addEventListener('mouseover', () =>{
+carrusel.addEventListener('mouseover',() =>{
     stop();
-})
-carrusel.addEventListener('mouseout', () =>{
+});
+carrusel.addEventListener('mouseout', () => {
     play();
-})
+});
+
+
+const cambiarFoto = (direccion) =>{
+    const anchoImagen= imagenes[0].clientWidth;
+    let nuevaPosicion;
+    if(direccion === 'izquierda'){
+        nuevaPosicion = carrusel.scrollLeft - anchoImagen;
+    }else{
+        nuevaPosicion = carrusel.scrollLeft + anchoImagen;
+    }
+    carrusel.scroll({
+        left:nuevaPosicion,
+        behavior:'smooth'
+    });
+    stop();
+    setTimeout(play, 6000);
+};
+
+const flechaIzquierda  = document.getElementById('flecha-izquierda');
+const flechaDerecha= document.getElementById('flecha-derecha');
+
+flechaIzquierda.addEventListener('click', () =>{
+  cambiarFoto('izquierda');
+});
+flechaDerecha.addEventListener('click', () => {
+    cambiarFoto('derecha');
+});
 
 play();
+

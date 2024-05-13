@@ -81,8 +81,7 @@ h2{
         height: 25px;
     }
     img:hover{
-        border: 1px solid #535b61;
-        filter: drop-shadow(0 2px 5px rgba(212, 206, 206, 0.7));
+        filter: drop-shadow(0 2px 5px #fff);
        }
 }
 
@@ -242,10 +241,11 @@ h2{
     img{
         width: 40px;
         height: 35px;
+        opacity: 50%;
     }
     img:hover{
         color: var(--sec);
-        filter: drop-shadow(0 2px 5px #fff);
+        filter: drop-shadow(0 2px 5px var(--quin));
     }
 }
 .flecha-izquierda {
