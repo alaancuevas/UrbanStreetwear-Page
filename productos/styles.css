@@ -64,3 +64,21 @@
         }
     }
 }
+.prev-next{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-bottom: 20px;
+    button{
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0  5px 10px var(--oscuro);
+        background-color: var(--quin);
+        color: var(--sec);
+        cursor: pointer;
+    }
+}
+.anterior, .siguiente, .uno, .dos, .tres{
+    display: none;
+}
