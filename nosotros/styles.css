@@ -1,4 +1,20 @@
 .container-nosotros{
-    max-width: 100%;
-    padding: 25%;
+    max-width: 1900px;
+    padding: 0 3%;
+}
+
+.centrar-texto{
+    text-align: center;
+}
+
+.containet-nosotros__imagen{
+}
+
+@media (min-width: 768px) {
+    
+.container-nosotros__info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+}
 }
