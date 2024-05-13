@@ -56,6 +56,10 @@
         width: 100%;
         cursor: pointer;
     }
+    button:hover{
+        color: var(--quin);
+        background-color: var(--sec);
+    }
 }
 @media (max-width: 768px){
     .descripcion-producto{
@@ -79,6 +83,6 @@
         cursor: pointer;
     }
 }
-.anterior, .siguiente, .uno, .dos, .tres{
+.anterior, .siguiente{
     display: none;
 }
