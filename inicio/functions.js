@@ -1,3 +1,15 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const navbar = document.querySelector('.navBar');
+    const logoHeight = document.querySelector('.cont-logo').offsetHeight;
+
+    window.onscroll = function() {
+        if (window.scrollY > 0) {
+            navbar.classList.add('fixed-nav');
+        } else {
+            navbar.classList.remove('fixed-nav');
+        }
+    };
+});
 document.addEventListener('DOMContentLoaded', function(){
     let burgerButton=document.querySelector('.burger button')
     let navItems=document.querySelector('.items-mobile')

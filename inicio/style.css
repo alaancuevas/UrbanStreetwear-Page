@@ -45,6 +45,7 @@ h2{
     align-items: center;
     display: block;
     z-index: 1;
+    
 }
 .cont-logo{
     justify-content: space-between;
@@ -95,6 +96,18 @@ h2{
 .navBar{
     background-color: black;
     text-transform: uppercase;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+.fixed-nav {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    opacity: 70%;
+    h1,h2,h3,p{
+        color: black;
+    }
 }
 .cont-navBar{
     align-items: center;
@@ -216,6 +229,7 @@ h2{
     background-color: var(--ter);
     max-width: 100%;
     position: relative;
+    padding-top: 60px;
 }
 .carrusel-items{
     display: flex;

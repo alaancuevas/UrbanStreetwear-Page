@@ -167,31 +167,33 @@ function mostrar(pagina) {
                     <h2>${producto.nombre}</h2>
                     <h3>${producto.precio}</h3>
                     <div class="agregar"><button class="agregar-al-carrito">Agregar al carrito</button></div>
-                    <div class="eliminar"><button class="eliminar-delcarrito">Eliminar</button></div>
+                    
                 </div>
             </div>
         `;
         contenedorProductos.insertAdjacentHTML('beforeend', prodHTML);
     });
     const agregar = document.querySelectorAll('.agregar-al-carrito');
-    
      agregar.forEach(boton =>{
-       
        boton.addEventListener('click', (ev) =>{
        incrementarContador();
-       document.querySelector('.shopping-cart .count p').innerText= contador;
-       document.querySelector('.eliminar').style.display="flex";
+       document.querySelector('.shopping-cart .count p').innerText = contador;
        boton.innerText='Producto agregado!'
-       boton.agregado=true;
-       ev.target.style.backgroundColor = '#008f39';
-       
-    
+       boton.disabled=true;
+       ev.target.style.backgroundColor = '#008f39'
     });
 });
-};
+
+}
 let contador=0;
 function incrementarContador(){
     contador ++;
+}
+
+function decrementarContador(){
+    if(contador > 0){
+        contador --;
+    } 
 }
 
 
