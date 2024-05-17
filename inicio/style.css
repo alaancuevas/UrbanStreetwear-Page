@@ -133,6 +133,9 @@ h2{
     justify-content: center;
     align-items: center;
     display: flex;
+    a{
+        color: white;
+    }
 }
 .burger{
     display: none;
@@ -228,7 +231,7 @@ h2{
 }
 .carrusel-item:hover{
     transform: scale(1.3);
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 }
 .flecha {
   position: absolute; 

@@ -61,6 +61,24 @@
         background-color: var(--sec);
     }
 }
+.eliminar{
+    align-items: center;
+    display: none;
+    button{
+        border: none;
+        color: var(--pri);
+        padding: 5px;
+        border-radius: 5px;
+        box-shadow: 0 3px 5px var(--oscuro);
+        background-color: red;
+        width: 100%;
+        cursor: pointer;
+    }
+    button:hover{
+        color: var(--quin);
+        background-color: var(--sec);
+    }
+}
 @media (max-width: 768px){
     .descripcion-producto{
         img{
