@@ -1,14 +1,3 @@
-:root{
-    --pri: #FFE8D7;
-    --sec: #ffb48a;
-    --ter: #FFBD8C;
-    --cuar: #c57d56;
-    --quin: #8d4925;
-    --blanco: #ffffff;
-    --negro: #212121;
-    --oscuro: #535b61;
-    --gris: #919191;
-}
 .container-productos{
     display: flex;
     flex-wrap: wrap;

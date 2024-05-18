@@ -11,7 +11,7 @@
 }
 body,html{
     font-family: 'Roboto';
-    background-color: var(--sec);
+    background: linear-gradient(var(--blanco)5%, var(--gris)95%);
     padding: 0;
     margin: 0;
 }
@@ -24,6 +24,10 @@ body,html{
 
 .flex{
     display: flex;
+}
+
+.centrar-texto{
+    text-align: center;
 }
 
 
@@ -51,7 +55,8 @@ h2{
     justify-content: space-between;
     align-items: center;
     display: flex;
-    background: linear-gradient(180deg,var(--quin),var(--cuar),var(--sec) ,var(--cuar),var(--quin));
+    /* background: linear-gradient(180deg,var(--quin),var(--cuar),var(--sec) ,var(--cuar),var(--quin)); */
+    background: linear-gradient(var(--oscuro), var(--gris), var(--oscuro));
 }
 .direccion{
     text-align: center;
@@ -96,7 +101,6 @@ h2{
 .navBar{
     background-color: black;
     text-transform: uppercase;
-    position: fixed;
     z-index: 1;
     width: 100%;
 }
@@ -123,8 +127,8 @@ h2{
         margin-left: 15px;
     }
     a:hover{
-        color: 	#535b61;
-        filter: drop-shadow(0 2px 5px #fff);
+        color:	var(--oscuro);
+        filter: drop-shadow(0 2px 5px var(--blanco));
     }
 }
 
@@ -284,6 +288,7 @@ h2{
 /*              Footer                */
 
 .footer{
+    margin-top: 20px;
     justify-content:space-between ;
     align-items: start;
     display: flex;

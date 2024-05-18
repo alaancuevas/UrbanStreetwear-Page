@@ -1,18 +1,7 @@
-:root{
-    --pri: #FFE8D7;
-    --sec: #ffb48a;
-    --ter: #FFBD8C;
-    --cuar: #c57d56;
-    --quin: #8d4925;
-    --blanco: #ffffff;
-    --negro: #212121;
-    --oscuro: #535b61;
-    --gris: #CECECE;
-}
-
 .container{
-    max-width: 100%;
-    margin: 0 3%;
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
 }
 
 /*              Seccion de Contacto              */
