@@ -1,2 +1,3 @@
-const carritoDeCompras = document.getElementById('carrito');
-carritoDeCompras.
+document.addEventListener('DOMContentLoaded', function() {
+    window.scrollTo(0, 0);
+  });

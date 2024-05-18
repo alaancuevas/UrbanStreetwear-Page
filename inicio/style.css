@@ -226,10 +226,18 @@ h2{
 /*              carrusel                */
 
 .carrusel{
-    background-color: var(--ter);
-    max-width: 100%;
+    background-image: url("../images/graffiti.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-size: cover;
+    height: 100%;
     position: relative;
     padding-top: 60px;
+}
+@media (max-width: 768px){
+    .carrusel{       
+        background-position: center;
+    }
 }
 .carrusel-items{
     display: flex;

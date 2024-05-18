@@ -1,15 +1,19 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const navbar = document.querySelector('.navBar');
-    const logoHeight = document.querySelector('.cont-logo').offsetHeight;
+document.addEventListener('DOMContentLoaded', function() {
+    window.scrollTo(0, 0);
+  });
 
-    window.onscroll = function() {
+  document.addEventListener("DOMContentLoaded", function() {
+    const navbar = document.querySelector('.navBar');
+
+    window.addEventListener('scroll', function() {
         if (window.scrollY > 0) {
             navbar.classList.add('fixed-nav');
         } else {
             navbar.classList.remove('fixed-nav');
         }
-    };
+    });
 });
+
 document.addEventListener('DOMContentLoaded', function(){
     let burgerButton=document.querySelector('.burger button')
     let navItems=document.querySelector('.items-mobile')

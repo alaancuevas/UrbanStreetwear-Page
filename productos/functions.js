@@ -196,15 +196,11 @@ function decrementarContador(){
     } 
 }
 
-
-function agregarAlCarrito(productId){
-    let carrito=JSON.parse(local)
-}
-
 function siguiente() {
     if ((paginaVista * productosPorPagina) < productos.length) {
         paginaVista++;
         mostrar(paginaVista);
+        window.scrollTo(0, 0);
         actualizarBotones();
     }
 }
@@ -213,6 +209,7 @@ function anterior() {
     if (paginaVista > 1)
         paginaVista--;
     mostrar(paginaVista);
+    window.scrollTo(0, 0);
     actualizarBotones();
 }
 
