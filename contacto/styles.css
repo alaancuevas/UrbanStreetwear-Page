@@ -61,15 +61,19 @@
 }
 
 .button-form{
-    background-color: var(--quin);
+    padding: 10px 85px;
+    border-style: none;
+    border-radius: 25px;
+    background-color: var(--negro);
     color: var(--blanco);
-    padding: 10px 25px;
-    font-size: 17px;
-    text-decoration: none;
-    border-radius: 6px;
-    text-align: center;
-    border: none;
-    margin-bottom: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    .button-form{
+        padding: 10px 25px;
+    }
 }
 
 .button-form-center{
@@ -81,5 +85,5 @@
 
 .button-form:hover{
     cursor: pointer;
-    background-color: var(--cuar);
+    background-color: black;
 }
