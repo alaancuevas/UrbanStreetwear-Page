@@ -15,12 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function(){
-    let burgerButton=document.querySelector('.burger button')
-    let navItems=document.querySelector('.items-mobile')
+    let burgerButton=document.querySelector('.burger button');
+    let navItems=document.querySelector('.items-mobile');
      
     burgerButton.addEventListener('click',function(){
-        let esVisible=navItems.style.display==='block'
-        navItems.style.display= esVisible ? 'none' : 'block'      
+        let esVisible=navItems.style.display==='block';
+        navItems.style.marginTop = '51px';
+        navItems.style.display= esVisible ? 'none' : 'block' ;     
 })
 })
 
