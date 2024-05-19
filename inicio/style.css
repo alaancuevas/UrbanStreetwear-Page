@@ -11,7 +11,7 @@
 }
 body,html{
     font-family: 'Roboto';
-    background: linear-gradient(var(--blanco)5%, var(--gris)95%);
+    background: linear-gradient(var(--blanco)10%, var(--gris)95%);
     padding: 0;
     margin: 0;
 }
@@ -28,6 +28,10 @@ body,html{
 
 .centrar-texto{
     text-align: center;
+}
+
+.shadow{
+    filter: drop-shadow(0 2px 5px var(--gris));;
 }
 
 

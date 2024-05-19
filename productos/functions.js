@@ -166,7 +166,7 @@ function mostrar(pagina) {
                     <img src="${producto.logo}" alt="logo urban">
                     <h2>${producto.nombre}</h2>
                     <h3>${producto.precio}</h3>
-                    <div class="agregar"><button class="agregar-al-carrito">Agregar al carrito</button></div>
+                    <div class="agregar"><button class="agregar-al-carrito">Comprar</button></div>
                     
                 </div>
             </div>
