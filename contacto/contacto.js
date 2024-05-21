@@ -27,6 +27,7 @@ telefono.addEventListener('focus', function() {
 email.addEventListener('focus', function() {
     limpiarCampos(email, errorEmail);
 });
+
 comentarios.addEventListener('focus', function() {
     limpiarCampos(comentarios, errorComentarios);
 });
@@ -64,9 +65,7 @@ function validar() {
         errores.push("Ingresá tu nombre completo");
         errorNombre.innerHTML = "Ingresá tu nombre completo";
         nombre.classList.add('error-campo');
-    } else {
-        telefono.focus();
-    }
+    } 
 
     if (telefono.value.length > 0 && (telefono.value.length < 10 || !regex_tel.test(telefono.value))) {
         errores.push("El teléfono debe contener 10 números");
@@ -82,14 +81,12 @@ function validar() {
         errores.push("Email inválido");
         errorEmail.innerHTML = "Email inválido";
         email.classList.add('error-campo');
-    }else{
-        comentarios.focus();
     }
-    if(comentarios.value.length === 0){
+    if(comentarios.value.trim().length === 0){
         errores.push('Debes agregar un comentario');
         errorComentarios.innerHTML = 'Campo obligatorio';
         comentarios.classList.add('error-campo');
-    }else if(comentarios.value.length > 200){
+    }else if (comentarios.value.length > 200) {
         errores.push('Máximo 200 caracteres');
         errorComentarios.innerHTML = 'Máximo 200 caracteres';
         comentarios.classList.add('error-campo');
@@ -106,4 +103,7 @@ function validar() {
 
     return false; 
 }
-
+formularioDeContacto.addEventListener('submit', function(event) {
+    event.preventDefault();  
+    validar();
+});
