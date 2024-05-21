@@ -87,3 +87,9 @@
     cursor: pointer;
     background-color: black;
 }
+.error{
+    color: red;
+}
+.error-campo{
+    background-color: #fbe3e3;
+}

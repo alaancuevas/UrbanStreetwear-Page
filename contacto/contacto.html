@@ -69,43 +69,48 @@
         <h2 class="text-line">Contactenos:</h2>
         <p>Use nuestro formulario de contacto para asistencia rápida y personalizada.</p>
     </div>
-    <div class="container-form">
-        <form class="form">
+    <div class="container-form" id="container-form">
+        <form class="form" onsubmit="return validar()">
             <div class="form-margin">
                 <label class="w-100">
                     <span class="text-margin">* Nombre (Completo)</span>
                     <div class="form-input flex">
-                        <input class="text-area" type="text" name="nombre" maxlength="100">
+                        <input class="text-area" id="txtNombre" type="text" name="nombre" maxlength="100">
                     </div>
+                    <span class="error" id="errorNombre" ></span>
                 </label>
             </div>
             <div class="form-margin">
                 <label class="w-100">
-                    <span class="text-margin">* Telefono (a 10 digitos)</span>
+                    <span class="text-margin">* Telefono (10 digitos)</span>
                     <div class="form-input flex">
-                        <input class="text-area" type="tel" name="telefono" maxlength="10" minlength="10">
+                        <input class="text-area" id="txtTel" type="tel" name="telefono" maxlength="10" minlength="10">
                     </div>
+                    <span class="error" id="errorTel" ></span>
                 </label>
             </div>
             <div class="form-margin">
                 <label class="w-100">
                     <span class="text-margin">* Email</span>
                     <div class="form-input flex">
-                        <input class="text-area" type="email" name="email">
+                        <input class="text-area" id="txtMail" type="email" name="email">
                     </div>
+                    <span class="error" id="errorEmail" ></span>
                 </label>
             </div>
             <div class="form-margin">
                 <label class="w-100">
                     <span class="text-margin">* Comentarios</span>
                     <div class="form-input flex">
-                        <textarea class="text-area" name="comentarios" rows="5" maxlength="648"></textarea>
+                        <textarea class="text-area" id="txtComentarios" name="comentarios" rows="5" maxlength="648"></textarea>
                     </div>
+                    <span class="error" id="errorComentarios" ></span>
                 </label>
             </div>
             <div class="button-form-center">
-                <input class="button-form" type="button" value="Enviar">
+                <input class="button-form" type="submit" value="Enviar">
             </div>
+            <div id="ListaDeErrores" class="error-list"></div>
         </form>
     </div>
   </section>
@@ -145,6 +150,7 @@
       <p>&#xA9 copyright - 2024 - reservados los derechos - creado por @pablodalcaraz & @alanroycuevas </p>
     </div>
   </footer>
+  <script src="../contacto/contacto.js"></script>
   <script src="../inicio/functions.js"></script>
 </body>
 </html>

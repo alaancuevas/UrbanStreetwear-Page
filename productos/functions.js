@@ -148,9 +148,11 @@ const productos = [
 
 const contenedorProductos = document.getElementById('container-productos');
 const productosPorPagina = 9;
-let paginaVista = 1;
+let paginaVista = 1; 
+let contador=0;
+const carrito = [];   
 
-function mostrar(pagina) {
+function mostrar(pagina) { //carga los productos en la página 
     contenedorProductos.innerHTML = '';
     const inicio = (pagina - 1) * productosPorPagina;
     const fin = pagina * productosPorPagina;
@@ -173,19 +175,21 @@ function mostrar(pagina) {
         `;
         contenedorProductos.insertAdjacentHTML('beforeend', prodHTML);
     });
-    const agregar = document.querySelectorAll('.agregar-al-carrito');
+    const agregar = document.querySelectorAll('.agregar-al-carrito'); //mueve el contador del carrito de compras
      agregar.forEach(boton =>{
        boton.addEventListener('click', (ev) =>{
+        const productoId = parseInt(boton.getAttribute('data-id'));
+        const productoAgregado = productos.find(prod => prod.idProducto === productoId);
        incrementarContador();
+       agregarProductoAlCarrito(productoAgregado);
        document.querySelector('.shopping-cart .count p').innerText = contador;
        boton.innerText='Producto agregado!'
        boton.disabled=true;
-       ev.target.style.backgroundColor = '#008f39'
+       boton.target.style.backgroundColor = '#008f39'
     });
 });
 
 }
-let contador=0;
 function incrementarContador(){
     contador ++;
 }
@@ -196,24 +200,75 @@ function decrementarContador(){
     } 
 }
 
-function siguiente() {
-    if ((paginaVista * productosPorPagina) < productos.length) {
-        paginaVista++;
-        mostrar(paginaVista);
-        window.scrollTo(0, 0);
-        actualizarBotones();
+function agregarProductoAlCarrito(producto) {
+    const productoEnCarrito = carrito.find(item => item.idProducto === producto.idProducto);
+
+    if (productoEnCarrito) {
+        productoEnCarrito.cantidad++;
+        productoEnCarrito.subtotal = productoEnCarrito.cantidad * producto.precio;
+    } else {
+        carrito.push({
+            ...producto,
+            cantidad: 1,
+            subtotal: producto.precio
+        });
     }
+
+    actualizarTablaCarrito();
 }
 
-function anterior() {
-    if (paginaVista > 1)
-        paginaVista--;
-    mostrar(paginaVista);
-    window.scrollTo(0, 0);
-    actualizarBotones();
+function actualizarTablaCarrito() {
+    const tablaCarrito = document.querySelector('.table-desc');
+    tablaCarrito.innerHTML = '';
+
+    carrito.forEach((producto, index) => {
+        const filaHTML = `
+        <tr>
+            <td><img src="${producto.imagen}" alt="${producto.nombre}" width="50"></td>
+            <td>${producto.nombre}</td>
+            <td>$${producto.precio}</td>
+            <td>${producto.cantidad}</td>
+            <td>$${producto.subtotal}</td>
+            <td><button class="eliminar-producto" data-index="${index}">Eliminar</button></td>
+        </tr>
+        `;
+        tablaCarrito.insertAdjacentHTML('beforeend', filaHTML);
+    });
+
+    actualizarTotalCarrito();
+    agregarEventosEliminar();
 }
 
-function actualizarBotones() {
+function actualizarTotalCarrito() {
+    const total = carrito.reduce((sum, producto) => sum + producto.subtotal, 0);
+    document.querySelector('.total-carrito').innerText = `Total: $${total}`;
+}
+
+function agregarEventosEliminar() {
+    const botonesEliminar = document.querySelectorAll('.eliminar-producto');
+    botonesEliminar.forEach(boton => {
+        boton.addEventListener('click', (ev) => {
+            const index = ev.target.getAttribute('data-index');
+            eliminarProductoDelCarrito(index);
+        });
+    });
+}
+
+function eliminarProductoDelCarrito(index) {
+    carrito[index].cantidad--;
+    if (carrito[index].cantidad <= 0) {
+        carrito.splice(index, 1);
+    } else {
+        carrito[index].subtotal = carrito[index].cantidad * carrito[index].precio;
+    }
+
+    decrementarContador();
+    document.querySelector('.shopping-cart .count p').innerText = contador;
+    actualizarTablaCarrito();
+}
+
+//pasar páginas de productos
+function pasarPagina() {
     const prevNext = document.getElementById('prev-next');
     const botonAnterior = prevNext.querySelector('.anterior');
     const botonSiguiente = prevNext.querySelector('.siguiente');
@@ -226,7 +281,21 @@ document.querySelector('.anterior').addEventListener('click', anterior);
 document.querySelector('.siguiente').addEventListener('click', siguiente);
 
 mostrar(paginaVista);
-actualizarBotones();
+pasarPagina();
 
+function siguiente() {
+    if ((paginaVista * productosPorPagina) < productos.length) {
+        paginaVista++;
+        mostrar(paginaVista);
+        window.scrollTo(0, 0);
+        pasarPagina();
+    }
+}
 
-
+function anterior() {
+    if (paginaVista > 1)
+        paginaVista--;
+    mostrar(paginaVista);
+    window.scrollTo(0, 0);
+    pasarPagina();
+}
