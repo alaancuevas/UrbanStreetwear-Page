@@ -93,3 +93,43 @@
 .error-campo{
     background-color: #fbe3e3;
 }
+.container-mensaje{
+    background: linear-gradient(180deg,#fff,var(--gris)50%, var(--oscuro)100%);
+    box-shadow: 0  5px 10px var(--oscuro);
+    border-radius: 16px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 10px;
+}
+.cont-mensaje{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    h2{
+        font-size: 40px;
+    }
+    h3{
+        font-size: 30px;
+    }
+    a{
+        text-decoration: none;
+        color: #fff;
+    }
+    button{
+        padding: 20px;
+        border-style: none;
+        border-radius: 25px;
+        margin: 0 auto;
+        background-color: #000000;
+        color: var(--blanco);
+        text-transform: uppercase;
+        font-weight: bold;
+        
+    }
+    button:hover{
+        cursor: pointer;
+        
+        filter: drop-shadow(0 2px 5px var(--blanco));
+    }
+}

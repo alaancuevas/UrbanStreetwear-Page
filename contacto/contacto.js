@@ -43,10 +43,10 @@ email.addEventListener('input', function(){
 //validar
 
 function validar() {
-    errorNombre.innerHTML = '';
-    errorTel.innerHTML = '';
-    errorEmail.innerHTML = '';
-    errorComentarios.innerHTML = '';
+    errorNombre.textContent = '';
+    errorTel.textContent = '';
+    errorEmail.textContent = '';
+    errorComentarios.textContent = '';
     nombre.classList.remove('error-campo');
     telefono.classList.remove('error-campo');
     email.classList.remove('error-campo');
@@ -56,6 +56,7 @@ function validar() {
     let regex_nombre = /^(?=.*\s).{7,30}$/;
     let regex_tel = /^[1-9]\d{9}$/;
     let regex_email = /^[a-zA-Z0-9._%+-]{1,30}@[a-zA-Z0-9.-]+\.[a-zA-Z]{1,5}$/;
+    
 
     if (nombre.value.trim().length === 0) {
         errores.push("Debes ingresar tu nombre");
@@ -99,6 +100,26 @@ function validar() {
         return false;
     }else{
         console.log("No hay errores en la carga del formulario");
+        const enviado= document.getElementById('formulario-enviado');
+        enviado.innerHTML = '';
+        let contenido = document.createElement('div');
+            contenido.innerHTML = `
+            <div class='container-mensaje'>
+            <div class='cont-mensaje'>
+            <h2>Tu consulta se envió Exitosamente!!!</h2>
+            <h3>Nos comunicaremos con vos a</h3>
+            <p>${email.value}</p>
+            <button id='irAProductos'>Ir a productos</button>
+            </div>
+            </div>
+            `;
+            enviado.appendChild(contenido);
+            formularioDeContacto.style.display = 'none';
+
+            const irAProductos = document.getElementById('irAProductos');
+            irAProductos.addEventListener('click', function(){
+                window.location.href='../productos/productos.html';
+            });
     }
 
     return false; 
@@ -107,3 +128,5 @@ formularioDeContacto.addEventListener('submit', function(event) {
     event.preventDefault();  
     validar();
 });
+
+
