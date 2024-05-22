@@ -68,6 +68,7 @@
     color: var(--blanco);
     text-transform: uppercase;
     font-weight: bold;
+    filter: drop-shadow(0 2px 5px var(--blanco));
 }
 
 @media (min-width: 768px) {
@@ -115,6 +116,15 @@
     a{
         text-decoration: none;
         color: #fff;
+    }
+    h4{
+        font-size: 30px; 
+    }
+    span{
+        font-size: 40px;
+    }
+    p{
+        font-size: 20px;
     }
     button{
         padding: 20px;
