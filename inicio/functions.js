@@ -1,6 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
     window.scrollTo(0, 0);
-  });
+    actualizarUsuario();
+
+    
+  const userDropdown = document.getElementById('userDropdown');
+  const btnLogout = document.getElementById('logoutBtn');
+  const btnIcon = document.getElementById('btnIcon');
+
+  
+
+btnLogout.addEventListener('click', function(){
+    localStorage.removeItem('nombreUsuario');
+    window.location.href = '../index.html';
+})
+
+
+
+btnIcon.addEventListener('click', function(){
+    userDropdown.style.display = userDropdown.style.display === 'none' ? 'block' : 'none';
+})
+});
+
 
   document.addEventListener("DOMContentLoaded", function() {
     const navbar = document.querySelector('.navBar');
@@ -24,6 +44,21 @@ document.addEventListener('DOMContentLoaded', function(){
         navItems.style.display= esVisible ? 'none' : 'block' ;     
 })
 })
+
+function actualizarUsuario() {
+    const nombreUsuario = localStorage.getItem('nombreUsuario');
+    const apellidoUsuario = localStorage.getItem('apellidoUsuario');
+    if (nombreUsuario && apellidoUsuario) {
+      const contenedorUsuario = document.getElementById('nombreUsuario');
+      
+      contenedorUsuario.textContent = nombreUsuario + " " +apellidoUsuario;
+      document.getElementById('usuario').style.display = 'flex';
+      document.getElementById('enlaceRegistro').style.display = 'none';
+    }
+  }
+
+  
+
 
 
 const carrusel = document.querySelector('.carrusel-items');

@@ -63,8 +63,8 @@ function validar() {
     password2.classList.remove('error-campo');
 
     let errores = [];
-    let regex_nombres = /^[A-Za-z\s]{2,100}$/;
-    let regex_apellido = /^[A-Za-z\s]{2,100}$/;
+    let regex_nombres = /^[A-Za-z\s]{2,20}$/;
+    let regex_apellido = /^[A-Za-z\s]{2,10}$/;
     let regex_email = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     let regex_password = /^(?=.*[A-Z])(?=(.*\d){3,}).{8,}$/;
 
@@ -122,8 +122,8 @@ function validar() {
         contenido.innerHTML = `
             <div class='container-mensaje'>
                 <div class='cont-mensaje'>
-                    <h2>Te registraste Exitosamente!!!</h2>
                     <h3>Hola ${nombres.value}!</h3>
+                    <h2>Te registraste Exitosamente!!!</h2>
                     <h4>Ya sos parte de <span>UrbanStreetWear</span></4>
                     <p>Te invitamos a ver nuestros productos...</p>
                     <button id='irAProductos'>Ir a productos</button>
@@ -137,8 +137,16 @@ function validar() {
         irAProductos.addEventListener('click', function() {
             window.location.href = '../productos/productos.html';
         });
+        registrarUsuario();
         return false; 
     }
+}
+function registrarUsuario(){
+    let nombreUsuario = document.getElementById('txtNombre').value;
+    let apellidoUsuario = document.getElementById('txtApellido').value;
+    localStorage.setItem('nombreUsuario', nombreUsuario);
+    localStorage.setItem('apellidoUsuario', apellidoUsuario);
+    window.location.href='../index.html';
 }
 
 formularioDeContacto.addEventListener('submit', function(event) {
