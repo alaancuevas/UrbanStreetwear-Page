@@ -138,6 +138,7 @@ function validar() {
             window.location.href = '../productos/productos.html';
         });
         registrarUsuario();
+        registrarEmail();
         return false; 
     }
 }
@@ -146,7 +147,12 @@ function registrarUsuario(){
     let apellidoUsuario = document.getElementById('txtApellido').value;
     localStorage.setItem('nombreUsuario', nombreUsuario);
     localStorage.setItem('apellidoUsuario', apellidoUsuario);
-    window.location.href='../productos/productos.html';
+    
+}
+function registrarEmail(){
+    let emailUsuario = document.getElementById('txtMail').value;
+    console.log('email guardado:', emailUsuario);
+    localStorage.setItem('emailUsuario', emailUsuario);
 }
 
 formularioDeContacto.addEventListener('submit', function(event) {
