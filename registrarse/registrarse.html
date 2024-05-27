@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,116 +12,118 @@
   <link rel="icon" href="/images/logoUrban.png">
   <title>Urban Streetwear | Iniciar Sesion</title>
 </head>
-<body>
-    <div>
-      <div class="cont-principal">
-        <div class="cont-logo">
-          <div class="direccion">
-            <h4><i class="fa fa-map-marker" aria-hidden="true" ></i> Av. Del Espacio 1234 <br> Gral. Agüero - San Luis</h4>
-          </div>
-          <div class="logo">
-            <img src="/images/logoUrban.png" alt="logo urban" height="100px" width="100px" />
-          </div>
-          <div class="redes">
-            <a href="#"><img src="/images/facebook.png" alt="logo facebook"></i></a>
-            <a href="#"><img src="/images/instagram.png" alt="logo instagram"></a>
-            <a href="#"><img src="/images/gorjeo.png" alt="logo x"></a>
-          </div>
-        </div>
-        <div class="navBar">
-          <div class="cont-navBar">
-            <div class="items">
-              <nav>
-                <a href="../index.html">Inicio</a>
-                <a href="../nosotros/nosotros.html">Nosotros</a>
-                <a href="../productos/productos.html">Productos</a>
-                <a href="../contacto/contacto.html">Contacto</a>
-              </nav>
-            </div>
-            <div class="burger">
-              <button><i class="fa fa-bars" aria-hidden="true"></i></button>
-            </div>
-            <div class="end-navbar">
-              <div class="login">
-                <div class="usuario" id="usuario" style="display: none;">
-                  <div class="icono-usuario"><i class="fa fa-user" aria-hidden="true"></i></div>
-                  <div class="nombreUsuario" id="nombreUsuario"></div>
-                </div>
-               
-              </div>
-              <div class="shopping-cart">
-              </div>
-            </div>
-          </div>
-        </div>
-  <div class="items-mobile">
-    <nav>
-      <a href="../index.html">Inicio</a>
-      <a href="../nosotros/nosotros.html">Nosotros</a>
-      <a href="../productos/productos.html">Productos</a>
-      <a href="../contacto/contacto.html">Contacto</a>
-    </nav>
-  </div>
 
+<body>
+  <div>
+    <div class="cont-principal">
+      <div class="cont-logo">
+        <div class="direccion">
+          <h4><i class="fa fa-map-marker" aria-hidden="true"></i> Av. Del Espacio 1234 <br> Gral. Agüero - San Luis</h4>
+        </div>
+        <div class="logo">
+          <img src="/images/logoUrban.png" alt="logo urban" height="100px" width="100px" />
+        </div>
+        <div class="redes">
+          <a href="#"><img src="/images/facebook.png" alt="logo facebook"></i></a>
+          <a href="#"><img src="/images/instagram.png" alt="logo instagram"></a>
+          <a href="#"><img src="/images/gorjeo.png" alt="logo x"></a>
+        </div>
+      </div>
+      <div class="navBar">
+        <div class="cont-navBar">
+          <div class="items">
+            <nav>
+              <a href="../index.html">Inicio</a>
+              <a href="../nosotros/nosotros.html">Nosotros</a>
+              <a href="../productos/productos.html">Productos</a>
+              <a href="../contacto/contacto.html">Contacto</a>
+            </nav>
+          </div>
+          <div class="burger">
+            <button><i class="fa fa-bars" aria-hidden="true"></i></button>
+          </div>
+          <div class="end-navbar">
+            <div class="login">
+              <div class="usuario" id="usuario" style="display: none;">
+                <div class="icono-usuario"><i class="fa fa-user" aria-hidden="true"></i></div>
+                <div class="nombreUsuario" id="nombreUsuario"></div>
+              </div>
+
+            </div>
+            <div class="shopping-cart">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="items-mobile">
+        <nav>
+          <a href="../index.html">Inicio</a>
+          <a href="../nosotros/nosotros.html">Nosotros</a>
+          <a href="../productos/productos.html">Productos</a>
+          <a href="../contacto/contacto.html">Contacto</a>
+        </nav>
+      </div>
+    </div>
+  </div>
   <section class="container">
     <div class="form-text">
-        <h1 class="text-line">Registrarse</h1>
+      <h1 class="text-line">Registrarse</h1>
     </div>
     <div class="formulario-enviado" id="formulario-enviado"></div>
     <div class="container-form" id="container-form">
-        <form class="form" onsubmit="return validar()">
-            <div class="form-margin">
-                <label class="w-100">
-                    <span class="text-margin">* Nombres </span>
-                    <div class="form-input flex">
-                        <input class="text-area" id="txtNombre" type="text" name="nombre" maxlength="100">
-                    </div>
-                    <span class="error" id="errorNombre"></span>
-                </label>
+      <form class="form" onsubmit="return validar()">
+        <div class="form-margin">
+          <label class="w-100">
+            <span class="text-margin">* Nombres </span>
+            <div class="form-input flex">
+              <input class="text-area" id="txtNombre" type="text" name="nombre" maxlength="100">
             </div>
-            <div class="form-margin">
-                <label class="w-100">
-                    <span class="text-margin">* Apellido</span>
-                    <div class="form-input flex">
-                        <input class="text-area" id="txtApellido" type="text" name="apellido" maxlength="100">
-                    </div>
-                    <span class="error" id="errorApellido"></span>
-                </label>
+            <span class="error" id="errorNombre"></span>
+          </label>
+        </div>
+        <div class="form-margin">
+          <label class="w-100">
+            <span class="text-margin">* Apellido</span>
+            <div class="form-input flex">
+              <input class="text-area" id="txtApellido" type="text" name="apellido" maxlength="100">
             </div>
-            <div class="form-margin">
-                <label class="w-100">
-                    <span class="text-margin">* Email</span>
-                    <div class="form-input flex">
-                        <input class="text-area" id="txtMail" type="email" name="email">
-                    </div>
-                    <span class="error" id="errorEmail"></span>
-                </label>
+            <span class="error" id="errorApellido"></span>
+          </label>
+        </div>
+        <div class="form-margin">
+          <label class="w-100">
+            <span class="text-margin">* Email</span>
+            <div class="form-input flex">
+              <input class="text-area" id="txtMail" type="email" name="email">
             </div>
-            <div class="form-margin">
-                <label class="w-100">
-                    <span class="text-margin">* Contraseña (al menos 8 dígitos, 1 mayúscula y 3 números)</span>
-                    <div class="form-input flex">
-                        <input class="text-area" id="txtPassword" type="password" name="password" maxlength="100">
-                    </div>
-                    <span class="error" id="errorPassword"></span>
-                </label>
+            <span class="error" id="errorEmail"></span>
+          </label>
+        </div>
+        <div class="form-margin">
+          <label class="w-100">
+            <span class="text-margin">* Contraseña (al menos 8 dígitos, 1 mayúscula y 3 números)</span>
+            <div class="form-input flex">
+              <input class="text-area" id="txtPassword" type="password" name="password" maxlength="100">
             </div>
-            <div class="form-margin">
-                <label class="w-100">
-                    <span class="text-margin">* Repita la contraseña</span>
-                    <div class="form-input flex">
-                        <input class="text-area" id="txtPassword2" type="password" name="password2" maxlength="100">
-                    </div>
-                    <span class="error" id="errorPassword2"></span>
-                </label>
+            <span class="error" id="errorPassword"></span>
+          </label>
+        </div>
+        <div class="form-margin">
+          <label class="w-100">
+            <span class="text-margin">* Repita la contraseña</span>
+            <div class="form-input flex">
+              <input class="text-area" id="txtPassword2" type="password" name="password2" maxlength="100">
             </div>
-            <div class="button-form-center">
-                <input class="button-form" type="submit" value="Enviar">
-            </div>
-            <div id="ListaDeErrores" class="error-list"></div>
-        </form>
+            <span class="error" id="errorPassword2"></span>
+          </label>
+        </div>
+        <div class="button-form-center">
+          <input class="button-form" type="submit" value="Enviar">
+        </div>
+        <div id="ListaDeErrores" class="error-list"></div>
+      </form>
     </div>
-</section>
+  </section>
 
   <footer>
     <div class="footer">
@@ -129,20 +132,21 @@
       </div>
       <div class="atencion">
         <div class="links-footer">
-            <h3><Strong>ATENCIÓN AL CLIENTE</Strong></h3>
-            <a href="../contacto/contacto.html">Preguntas frecuentes</a>
-            <a href="../contacto/contacto.html">Contáctanos</a>
-            <div class="direccion-footer">
-              <h4><i class="fa fa-map-marker" aria-hidden="true" ></i> Av. Del Espacio 1234 <br>Gral. Agüero - San Luis</h4>
-            </div>
+          <h3><Strong>ATENCIÓN AL CLIENTE</Strong></h3>
+          <a href="../contacto/contacto.html">Preguntas frecuentes</a>
+          <a href="../contacto/contacto.html">Contáctanos</a>
+          <div class="direccion-footer">
+            <h4><i class="fa fa-map-marker" aria-hidden="true"></i> Av. Del Espacio 1234 <br>Gral. Agüero - San Luis
+            </h4>
+          </div>
         </div>
       </div>
       <div class="cont-links">
         <div class="links-footer">
-            <h3><Strong>NAVEGACIÓN</Strong></h3>
-            <a href="../index.html">Inicio</a>
-            <a href="../nosotros/nosotros.html">Nosotros</a>
-            <a href="../productos/productos.html">Productos</a>
+          <h3><Strong>NAVEGACIÓN</Strong></h3>
+          <a href="../index.html">Inicio</a>
+          <a href="../nosotros/nosotros.html">Nosotros</a>
+          <a href="../productos/productos.html">Productos</a>
         </div>
       </div>
       <div class="redes-footer">
@@ -159,4 +163,5 @@
   <script src="/registrarse/registrarse.js"></script>
   <script src="/inicio/functions.js"></script>
 </body>
+
 </html>
