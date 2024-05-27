@@ -146,7 +146,7 @@ function registrarUsuario(){
     let apellidoUsuario = document.getElementById('txtApellido').value;
     localStorage.setItem('nombreUsuario', nombreUsuario);
     localStorage.setItem('apellidoUsuario', apellidoUsuario);
-    window.location.href='../index.html';
+    window.location.href='../productos/productos.html';
 }
 
 formularioDeContacto.addEventListener('submit', function(event) {
