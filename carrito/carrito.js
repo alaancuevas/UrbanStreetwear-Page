@@ -62,13 +62,27 @@ document.addEventListener('DOMContentLoaded', (ev) =>{
         <h1>¡Tu compra se realizó con Éxito!</h1>
         <h3>Te enviamos el detalle a </h3>
         <p>${localStorage.getItem('emailUsuario')}</p>
+        <button class='agregar' id='seguir-comprando'><a href='../productos/productos.html'>Seguir comprando</a></button>
         </div>
         </div>
         `;
         carrito.style.display = 'none';
         compraExitosa.appendChild(contenido);
+        localStorage.removeItem('carrito');
+        localStorage.removeItem('prodAgregado');
+        actualizarTabla();
+        inicializarContador();
         
     });
 
 });
-
+document.addEventListener('DOMContentLoaded', () =>{
+    const seguirComprando = document.getElementById('seguir-comprando');
+    if(seguirComprando){
+        seguirComprando.addEventListener('click', ()=>{
+            localStorage.removeItem('carrito');
+            localStorage.removeItem('prodAgregado');
+            inicializarContador();
+        })
+    }
+})

@@ -59,32 +59,33 @@ function actualizarUsuario() {
     }
   }
 
-  
-
-
-
 const carrusel = document.querySelector('.carrusel-items');
-const imagenes= carrusel.getElementsByClassName('carrusel-item');
+const imagenes = Array.from(carrusel.getElementsByClassName('carrusel-item'));
 
 let interval = null;
-let velocidad = 1;
+const velocidad = 1;
 const getMaximo = () => carrusel.scrollWidth - carrusel.clientWidth;
-
 let maximo = getMaximo();
 
-const play = () => {
-   if (interval !== null) clearInterval(interval); 
-   interval = setInterval(() => {
-    carrusel.scrollLeft += velocidad;
+// Clonar las primeras y últimas imágenes
+imagenes.forEach(imagen => {
+    const cloneFirst = imagen.cloneNode(true);
+    const cloneLast = imagen.cloneNode(true);
+    carrusel.appendChild(cloneFirst);
+    carrusel.insertBefore(cloneLast, imagenes[0]);
+});
 
-    if (carrusel.scrollLeft >= maximo) {
-        velocidad *= -1; 
-        carrusel.scrollLeft = maximo; 
-    } else if (carrusel.scrollLeft <= 0) {
-        velocidad *= -1; 
-        carrusel.scrollLeft = 0; 
-    }
-   }, 10);
+const play = () => {
+    if (interval !== null) clearInterval(interval);
+    interval = setInterval(() => {
+        carrusel.scrollLeft += velocidad;
+
+        if (carrusel.scrollLeft >= maximo) {
+            carrusel.scrollLeft = imagenes[0].clientWidth; // Salta al primer clon
+        } else if (carrusel.scrollLeft <= 0) {
+            carrusel.scrollLeft = maximo - imagenes[0].clientWidth; // Salta al último clon
+        }
+    }, 10);
 };
 
 const stop = () => {
@@ -98,40 +99,41 @@ window.addEventListener('resize', () => {
     maximo = getMaximo();
 });
 
-carrusel.addEventListener('mouseover',() =>{
-    stop();
-});
-carrusel.addEventListener('mouseout', () => {
-    play();
-});
+carrusel.addEventListener('mouseover', stop);
+carrusel.addEventListener('mouseout', play);
 
-
-const cambiarFoto = (direccion) =>{
-    const anchoImagen= imagenes[0].clientWidth;
-    let nuevaPosicion;
-    if(direccion === 'izquierda'){
-        nuevaPosicion = carrusel.scrollLeft - anchoImagen;
-    }else{
-        nuevaPosicion = carrusel.scrollLeft + anchoImagen;
+const cambiarFoto = (direccion) => {
+    const anchoImagen = imagenes[0].clientWidth;
+    let nuevaPosicion = carrusel.scrollLeft;
+    if (direccion === 'izquierda') {
+        nuevaPosicion -= anchoImagen;
+        if (nuevaPosicion < 0) {
+            carrusel.scrollLeft = maximo - imagenes[0].clientWidth; // Salta al último clon
+            return;
+        }
+    } else {
+        nuevaPosicion += anchoImagen;
+        if (nuevaPosicion > maximo) {
+            carrusel.scrollLeft = imagenes[0].clientWidth; // Salta al primer clon
+            return;
+        }
     }
     carrusel.scroll({
-        left:nuevaPosicion,
-        behavior:'smooth'
+        left: nuevaPosicion,
+        behavior: 'smooth'
     });
     stop();
     setTimeout(play, 6000);
 };
 
-const flechaIzquierda  = document.getElementById('flecha-izquierda');
-const flechaDerecha= document.getElementById('flecha-derecha');
+const flechaIzquierda = document.getElementById('flecha-izquierda');
+const flechaDerecha = document.getElementById('flecha-derecha');
 
-flechaIzquierda.addEventListener('click', () =>{
-  cambiarFoto('izquierda');
+flechaIzquierda.addEventListener('click', () => {
+    cambiarFoto('izquierda');
 });
 flechaDerecha.addEventListener('click', () => {
     cambiarFoto('derecha');
 });
 
 play();
-
-

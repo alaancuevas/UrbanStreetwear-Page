@@ -488,3 +488,23 @@ h2{
         font-size: 10px;
     }
 }
+.preguntas{
+    border-radius: 16px;
+    box-shadow: 0  5px 10px var(--oscuro);
+    padding: 20px;
+    margin: 40px;
+    h2{
+        color: var(--background);
+    }
+    p{
+        color: var(--quin);
+    }
+    a{
+        text-decoration: none;
+        color: var(--negro);
+    }
+    a:hover{
+        color: var(--blanco);
+        filter: drop-shadow(0 2px 5px var(--blanco));
+    }
+}

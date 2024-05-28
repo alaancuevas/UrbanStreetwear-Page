@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../inicio/style.css" />
   <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="/inicio/style.css">
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="icon" href="/images/logoUrban.png">
@@ -52,11 +53,19 @@
                 </div>
               </div>
               <div class="registrarse" id="registrarse">
-              <a href="/registrarse/registrarse.html" id="enlaceRegistro">Registrarse </a>
-              <div class="icono-user"><i class="fa fa-user"
-                aria-hidden="true"></i></div>
-              </div>
+                <a href="/registrarse/registrarse.html" id="enlaceRegistro">Registrarse </a>
+                <div class="icono-user"><i class="fa fa-user"
+                  aria-hidden="true"></i></div>
+                </div>
             </div>
+            <div class="shopping-cart">
+              <div class="shopping">
+                <button><a href="../carrito/carrito.html"><i class="fa fa-shopping-bag"
+                      aria-hidden="true"></i></a></button>
+              </div>
+              <div class="count" id="contador">
+                <p>0</p>
+              </div>
             </div>
           </div>
         </div>
@@ -135,7 +144,7 @@
       <div class="atencion">
         <div class="links-footer">
           <h3><Strong>ATENCIÓN AL CLIENTE</Strong></h3>
-          <a href="./contacto.html">Preguntas frecuentes</a>
+          <a href="/preguntas/preguntas.html">Preguntas frecuentes</a>
           <a href="./contacto.html">Contáctanos</a>
           <div class="direccion-footer">
             <h4><i class="fa fa-map-marker" aria-hidden="true"></i> Av. Del Espacio 1234 <br>Gral. Agüero - San Luis
@@ -162,7 +171,8 @@
       <p>&#xA9 copyright - 2024 - reservados los derechos - creado por @pablodalcaraz & @alanroycuevas </p>
     </div>
   </footer>
-  
+  <script src="/carrito/carrito.js"></script>
+  <script src="/productos/functions.js"></script>
   <script src="../contacto/contacto.js"></script>
   <script src="/inicio/functions.js"></script>
 </body>
