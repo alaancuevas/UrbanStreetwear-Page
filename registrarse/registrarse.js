@@ -18,26 +18,19 @@ function limpiarCampos(inputElement, errorElement) {
     inputElement.classList.remove('error-campo');
     inputElement.value = '';
 }
+function agregarEventoFocus(inputElement, errorElement) {
+    inputElement.addEventListener('focus', function() {
+        if (inputElement.classList.contains('error-campo')) {
+            limpiarCampos(inputElement, errorElement);
+        }
+    });
+}
 
-nombres.addEventListener('focus', function() {
-    limpiarCampos(nombres, errorNombre);
-});
-
-apellido.addEventListener('focus', function() {
-    limpiarCampos(apellido, errorApellido);
-});
-
-email.addEventListener('focus', function() {
-    limpiarCampos(email, errorEmail);
-});
-
-password.addEventListener('focus', function() {
-    limpiarCampos(password, errorPassword);
-});
-
-password2.addEventListener('focus', function() {
-    limpiarCampos(password2, errorPassword2);
-});
+agregarEventoFocus(nombres, errorNombre);
+agregarEventoFocus(apellido, errorApellido);
+agregarEventoFocus(email, errorEmail);
+agregarEventoFocus(password, errorPassword);
+agregarEventoFocus(password2, errorPassword2);
 
 // Fijar modo de escritura 
 nombres.addEventListener('input', function() {
@@ -132,6 +125,7 @@ function validar() {
         `;
         enviado.appendChild(contenido);
         containerForm.style.display = 'none';
+        window.scrollTo(0, 0); 
 
         const irAProductos = document.getElementById('irAProductos');
         irAProductos.addEventListener('click', function() {

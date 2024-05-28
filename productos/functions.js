@@ -212,7 +212,7 @@ function actualizarEstadoBotones() {
     carrito.forEach(producto => {
         const boton = document.querySelector(`.agregar-al-carrito[data-idProducto="${producto.idProducto}"]`);
         if (boton) {
-            boton.style.backgroundColor = 'green';
+            boton.style.backgroundColor = '#504537';
             boton.textContent = 'Agregado!';
         }
     });
@@ -244,7 +244,7 @@ contenedorProductos.addEventListener('click', function(ev){
             carrito.push(producto);
             localStorage.setItem('carrito', JSON.stringify(carrito));
             incrementarContador();
-            ev.target.style.backgroundColor = 'green';
+            ev.target.style.backgroundColor = '#504537';
             ev.target.textContent = 'Agregado!';
         } else {
             console.log("El producto ya está agregado al carrito.");

@@ -15,7 +15,16 @@
     display: block;
     margin: 60px;
 }
-.total-carrito, .comprar{
+.total-carrito{
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    background-color: var(--pri);
+    color: var(--quin);
+    margin-top: 20px;
+    box-shadow: 0  5px 10px var(--oscuro);
+}
+.comprar{
     width: 100%;
     text-align: center;
     border-radius: 10px;

@@ -4,28 +4,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function actualizarTabla() {
         tbody.innerHTML = ''; 
+        let total = 0;
         carrito.forEach(producto => {
             const tr = document.createElement('tr');
             const precio = parseFloat(producto.precio.replace('$', ''));
             const subtotal = precio * producto.cantidad;
-
+            total += subtotal;
             tr.innerHTML = `
                 <td><img src="${producto.imagen}" alt="${producto.nombre}" width="40"></td>
                 <td>${producto.nombre}</td>
-                <td>${producto.precio}</td>
+                <td>$${precio.toFixed(2).toLocaleString('en-ARS')}</td>
                 <td>${producto.cantidad}</td>
                 <td>$${subtotal.toFixed(2)}</td>
                 <td><button class="eliminar" data-idproducto="${producto.idProducto}"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
             `;
             tbody.appendChild(tr);
         });
-
+        
         const contadorCarrito = document.getElementById('contador');
         if (contadorCarrito) {
             contadorCarrito.querySelector('p').innerHTML = carrito.length;
         }
-    }
+        const totalDelCarrito = document.getElementById('total-carrito');
+        if (totalDelCarrito) {
+            totalDelCarrito.textContent = `Total: $${total.toFixed(2)}`;
+        }
 
+    }
+     
     tbody.addEventListener('click', function(ev) {
         if (ev.target && ev.target.closest('.eliminar')) {
             const idProducto = ev.target.closest('.eliminar').getAttribute('data-idproducto');
@@ -65,3 +71,4 @@ document.addEventListener('DOMContentLoaded', (ev) =>{
     });
 
 });
+

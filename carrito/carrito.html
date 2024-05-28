@@ -44,17 +44,20 @@
             <div class="end-navbar">
               <div class="login">
                 <div class="usuario" id="usuario" style="display: none;">
-                  
                   <div class="nombreUsuario" id="nombreUsuario"></div>
-                  <div class="icono-usuario" id="iconoUsuario"><button class="btnIcon" id="btnIcon"><i class="fa fa-user" aria-hidden="true"></i></button></i></div>
-                   <div class="dropdown" id="userDropdown" >
-                        <button  id="logoutBtn">Cerrar Sesión</button>
-                    </div>
+                  <div class="icono-usuario" id="iconoUsuario"><button class="btnIcon" id="btnIcon"><i class="fa fa-user"
+                        aria-hidden="true"></i></button></i></div>
+                  <div class="dropdown" id="userDropdown">
+                    <button id="logoutBtn">Cerrar Sesión</button>
+                  </div>
                 </div>
-                <a href="/registrarse/registrarse.html" id="enlaceRegistro">Registrate</a>
+                <div class="registrarse" id="registrarse">
+                <a href="/registrarse/registrarse.html" id="enlaceRegistro">Registrarse </a>
+                <div class="icono-user"><i class="fa fa-user"
+                  aria-hidden="true"></i></div>
+                </div>
               </div>
-             
-              </div>
+              
             </div>
           </div>
         </div>
@@ -82,8 +85,9 @@
         </tbody>
     </table>
     <div class="total-carrito">
-        Total: $0
-    </div>
+      <h2 id="total-carrito">Total: $0.00</h2>
+  </div>
+  
     <div class="comprar" id="btnComprar"><button>Comprar</button></div>
   </div>
   <div class="compra-exitosa" id="compraExitosa"></div>
@@ -123,7 +127,7 @@
     </div>
   </footer>
   <script src="/carrito/carrito.js"></script>
-  <script src="../inicio/functions.js"></script>
+  <script src="/inicio/functions.js"></script>
   <script src="/productos/functions.js"></script>
 </body>
 </html>

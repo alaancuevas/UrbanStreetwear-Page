@@ -15,22 +15,19 @@ function limpiarCampos(inputElement, errorElement){
     inputElement.classList.remove('error-campo');
     inputElement.value = '';
 }
+function agregarEventoFocus(inputElement, errorElement) {
+    inputElement.addEventListener('focus', function() {
+        if (inputElement.classList.contains('error-campo')) {
+            limpiarCampos(inputElement, errorElement);
+        }
+    });
+}
 
-nombre.addEventListener('focus', function() {
-    limpiarCampos(nombre, errorNombre);
-});
+agregarEventoFocus(nombre, errorNombre);
+agregarEventoFocus(telefono, errorTel);
+agregarEventoFocus(email, errorEmail);
+agregarEventoFocus(comentarios, errorComentarios);
 
-telefono.addEventListener('focus', function() {
-    limpiarCampos(telefono, errorTel);
-});
-
-email.addEventListener('focus', function() {
-    limpiarCampos(email, errorEmail);
-});
-
-comentarios.addEventListener('focus', function() {
-    limpiarCampos(comentarios, errorComentarios);
-});
 
 // fijar modo de escritura 
 nombre.addEventListener('input', function(){
@@ -109,19 +106,15 @@ function validar() {
             <h2>Tu consulta se envió Exitosamente!!!</h2>
             <h3>Nos comunicaremos con vos a</h3>
             <p>${email.value}</p>
-            <button id='irAProductos'>Ir a productos</button>
+            <a href="../productos/productos.html"><button id='irAProductos'>Ir a productos</button></a>
             </div>
             </div>
             `;
             enviado.appendChild(contenido);
             formularioDeContacto.style.display = 'none';
-
-            const irAProductos = document.getElementById('irAProductos');
-            irAProductos.addEventListener('click', function(){
-                window.location.href='../productos/productos.html';
-            });
+            window.scrollTo(0, 0); 
     }
-
+    
     return false; 
 }
 formularioDeContacto.addEventListener('submit', function(event) {

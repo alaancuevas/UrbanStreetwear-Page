@@ -24,12 +24,15 @@ btnIcon.addEventListener('click', function(){
 
   document.addEventListener("DOMContentLoaded", function() {
     const navbar = document.querySelector('.navBar');
+    const itemsMobile = document.querySelector('.items-mobile');
 
     window.addEventListener('scroll', function() {
         if (window.scrollY > 0) {
             navbar.classList.add('fixed-nav');
+            itemsMobile.classList.add('items-mobile-fixed');
         } else {
             navbar.classList.remove('fixed-nav');
+            itemsMobile.classList.remove('items-mobile-fixed');
         }
     });
 });
@@ -40,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function(){
      
     burgerButton.addEventListener('click',function(){
         let esVisible=navItems.style.display==='block';
-        navItems.style.marginTop = '51px';
         navItems.style.display= esVisible ? 'none' : 'block' ;     
 })
 })
@@ -53,7 +55,7 @@ function actualizarUsuario() {
       
       contenedorUsuario.textContent = nombreUsuario + " " +apellidoUsuario;
       document.getElementById('usuario').style.display = 'flex';
-      document.getElementById('enlaceRegistro').style.display = 'none';
+      document.getElementById('registrarse').style.display = 'none';
     }
   }
 
@@ -131,4 +133,5 @@ flechaDerecha.addEventListener('click', () => {
 });
 
 play();
+
 
