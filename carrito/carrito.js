@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', (ev) => {
     const btnComprar = document.getElementById('btnComprar');
     const compraExitosa = document.getElementById('compraExitosa');
     const carritoElement = document.getElementById('carrito');
-    const vacio = document.getElementById('carrito-vacio');
+    
 
     btnComprar.addEventListener('click', () => {
         let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
@@ -62,9 +62,9 @@ document.addEventListener('DOMContentLoaded', (ev) => {
                 <div class='container-mensaje'>
                     <div class='cont-mensaje'>
                         <h1>¡Tu compra se realizó con Éxito!</h1>
-                        <h3>Enviaremos la factura al siguiente correo: <br>
-                        <span>${localStorage.getItem('emailUsuario')}</span></h3>
-                        <a href="../productos/productos.html"><button id='seguir-comprando'>Seguir comprando</button></a>
+                        <h3>Te enviamos el detalle a </h3>
+                        <p>${localStorage.getItem('emailUsuario')}</p>
+                        <button class='agregar' id='seguir-comprando'><a href='../productos/productos.html'>Seguir comprando</a></button>
                     </div>
                 </div>
             `;
@@ -72,35 +72,37 @@ document.addEventListener('DOMContentLoaded', (ev) => {
             compraExitosa.appendChild(contenido);
             localStorage.removeItem('carrito');
             localStorage.removeItem('prodAgregado');
+            
             actualizarTabla();
             inicializarContador();
         }else if(!nombreUsuario && carrito.length > 0){
-            vacio.innerHTML= '';
-            let contenido= document.createElement('div');
             contenido.innerHTML = `
             <div class='container-mensaje'>
             <div class='cont-mensaje'>
-                <h3>Para realizar una compra, primero tienes que registrarte!</h3>
-                <a href="../registrarse/registrarse.html"><button id='registrarse'>Registrarse</button></a>
+                <h3>Aún no te registraste</h3>
+                <p>¡Hacelo y continuá con la compra!</p>
+                <button class='agregar' id='seguir-comprando'><a href='../registrarse/registrarse.html'>Registrarse</a></button>
             </div>
             </div
             `;
-            vacio.appendChild(contenido);
-            vacio.style.display = 'block';
+            compraExitosa.appendChild(contenido);
+            carritoElement.style.display = 'none';
+            localStorage.removeItem('carrito');
+            localStorage.removeItem('prodAgregado');
         } else  {
-            vacio.innerHTML = '';
-            let contenido = document.createElement('div');
             contenido.innerHTML = `
             <div class='container-mensaje'>
                 <div class='cont-mensaje'>
-                    <h3>El carrito está vacío <br>
-                    <span>No se puede realizar la compra porque el carrito está vacío.</span></h3>
-                    <a href="../productos/productos.html"><button id='agregar-productos'>Buscar Productos</button></a>
+                    <h3>El carrito está vacío</h3>
+                    <p>¡Agregá un producto!</p>
+                    <button class='agregar' id='seguir-comprando'><a href='../productos/productos.html'>Productos</a></button>
                 </div>
                 </div>
             `;
-            vacio.appendChild(contenido);
-            vacio.style.display = 'block';
+            compraExitosa.appendChild(contenido);
+            carritoElement.style.display = 'none';
+            localStorage.removeItem('carrito');
+            localStorage.removeItem('prodAgregado');
         }
     });
 });

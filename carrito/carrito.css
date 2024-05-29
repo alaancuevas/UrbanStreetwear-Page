@@ -28,6 +28,10 @@
     justify-content: center;
     display: block;
 }
+.agregar a{
+    text-decoration: none;
+    color: var(--blanco);
+}
 
 .prod-table{
     border: 2px solid var(--ter);
@@ -59,6 +63,7 @@
     color: var(--pri);
     margin-top: 20px;
     box-shadow: 0  5px 10px var(--oscuro);
+    
 }
 .title{
     th{
