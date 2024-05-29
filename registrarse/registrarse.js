@@ -141,7 +141,6 @@ function registrarUsuario(){
     let apellidoUsuario = document.getElementById('txtApellido').value;
     localStorage.setItem('nombreUsuario', nombreUsuario);
     localStorage.setItem('apellidoUsuario', apellidoUsuario);
-    
 }
 function registrarEmail(){
     let emailUsuario = document.getElementById('txtMail').value;

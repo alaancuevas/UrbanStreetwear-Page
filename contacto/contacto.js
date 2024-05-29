@@ -1,4 +1,5 @@
 const formularioDeContacto = document.getElementById('container-form');
+
 let nombre = document.getElementById('txtNombre');
 let errorNombre = document.getElementById('errorNombre');
 let telefono = document.getElementById('txtTel');

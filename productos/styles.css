@@ -59,9 +59,7 @@
         filter: drop-shadow(0 2px 5px var(--blanco));
     }
 }
-.eliminar{
-    display: none;
-}
+
 @media (max-width: 768px){
     .descripcion-producto{
         img{

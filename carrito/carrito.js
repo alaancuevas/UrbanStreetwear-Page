@@ -13,25 +13,25 @@ document.addEventListener('DOMContentLoaded', () => {
             tr.innerHTML = `
                 <td><img src="${producto.imagen}" alt="${producto.nombre}" width="40"></td>
                 <td>${producto.nombre}</td>
-                <td>$${precio.toFixed(2).toLocaleString('en-ARS')}</td>
+                <td>$${precio.toFixed(2)}</td>
                 <td>${producto.cantidad}</td>
                 <td>$${subtotal.toFixed(2)}</td>
-                <td><button class="eliminar" data-idproducto="${producto.idProducto}"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+                <td><button class="eliminar" data-idproducto="${producto.idProducto}"><i class="fa fa-trash" aria-hidden="true"></i></td>
             `;
             tbody.appendChild(tr);
         });
-        
+
         const contadorCarrito = document.getElementById('contador');
         if (contadorCarrito) {
             contadorCarrito.querySelector('p').innerHTML = carrito.length;
         }
+
         const totalDelCarrito = document.getElementById('total-carrito');
         if (totalDelCarrito) {
             totalDelCarrito.textContent = `Total: $${total.toFixed(2)}`;
         }
-
     }
-     
+
     tbody.addEventListener('click', function(ev) {
         if (ev.target && ev.target.closest('.eliminar')) {
             const idProducto = ev.target.closest('.eliminar').getAttribute('data-idproducto');
@@ -47,42 +47,81 @@ document.addEventListener('DOMContentLoaded', () => {
     actualizarTabla();
 });
 
-document.addEventListener('DOMContentLoaded', (ev) =>{
-
+document.addEventListener('DOMContentLoaded', (ev) => {
     const btnComprar = document.getElementById('btnComprar');
     const compraExitosa = document.getElementById('compraExitosa');
-    const carrito= document.getElementById('carrito');
+    const carritoElement = document.getElementById('carrito');
+    const vacio = document.getElementById('carrito-vacio');
 
-    btnComprar.addEventListener('click', () =>{
+    btnComprar.addEventListener('click', () => {
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        let nombreUsuario = localStorage.getItem('nombreUsuario');
         compraExitosa.innerHTML = '';
         let contenido = document.createElement('div');
-        contenido.innerHTML = `
-        <div class='container-mensaje'>
-        <div class='cont-mensaje'>
-        <h1>¡Tu compra se realizó con Éxito!</h1>
-        <h3>Te enviamos el detalle a </h3>
-        <p>${localStorage.getItem('emailUsuario')}</p>
-        <button class='agregar' id='seguir-comprando'><a href='../productos/productos.html'>Seguir comprando</a></button>
-        </div>
-        </div>
-        `;
-        carrito.style.display = 'none';
-        compraExitosa.appendChild(contenido);
-        localStorage.removeItem('carrito');
-        localStorage.removeItem('prodAgregado');
-        actualizarTabla();
-        inicializarContador();
-        
+        if (carrito.length > 0 && nombreUsuario) {
+            contenido.innerHTML = `
+                <div class='container-mensaje'>
+                    <div class='cont-mensaje'>
+                        <h1>¡Tu compra se realizó con Éxito!</h1>
+                        <h3>Te enviamos el detalle a </h3>
+                        <p>${localStorage.getItem('emailUsuario')}</p>
+                        <button class='agregar' id='seguir-comprando'><a href='../productos/productos.html'>Seguir comprando</a></button>
+                    </div>
+                </div>
+            `;
+            carritoElement.style.display = 'none';
+            compraExitosa.appendChild(contenido);
+            localStorage.removeItem('carrito');
+            localStorage.removeItem('prodAgregado');
+            actualizarTabla();
+            inicializarContador();
+        }else if(!nombreUsuario){
+            vacio.innerHTML= '';
+            let contenido= document.createElement('div');
+            contenido.innerHTML = `
+            <div class='container-mensaje'>
+            <div class='cont-mensaje'>
+                <h3>Aún no te registraste</h3>
+                <p>¡Hacelo y continuá con la compra!</p>
+            </div>
+            </div
+            `;
+            vacio.appendChild(contenido);
+            vacio.style.display = 'block';
+            btnComprar.innerHTML = '<a href="../registrarse/registrarse.html">Ir a resgistrarse</a>';
+        } else {
+            vacio.innerHTML = '';
+            let contenido = document.createElement('div');
+            contenido.innerHTML = `
+            <div class='container-mensaje'>
+                <div class='cont-mensaje'>
+                    <h3>El carrito está vacío</h3>
+                    <p>¡Agregá un producto!</p>
+                </div>
+                </div>
+            `;
+            vacio.appendChild(contenido);
+            vacio.style.display = 'block';
+            btnComprar.innerHTML = '<a href="../productos/productos.html">Ir a productos</a>';
+        }
     });
-
 });
-document.addEventListener('DOMContentLoaded', () =>{
+
+document.addEventListener('DOMContentLoaded', () => {
     const seguirComprando = document.getElementById('seguir-comprando');
-    if(seguirComprando){
-        seguirComprando.addEventListener('click', ()=>{
+    if (seguirComprando) {
+        seguirComprando.addEventListener('click', () => {
             localStorage.removeItem('carrito');
             localStorage.removeItem('prodAgregado');
             inicializarContador();
-        })
+        });
     }
-})
+});
+
+function inicializarContador() {
+    const contadorCarrito = document.getElementById('contador');
+    if (contadorCarrito) {
+        const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        contadorCarrito.querySelector('p').innerHTML = carrito.length;
+    }
+}

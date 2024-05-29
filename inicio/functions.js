@@ -1,8 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
     window.scrollTo(0, 0);
     actualizarUsuario();
+    inicializarContador()
 
-    
+    function inicializarContador() {
+        const contadorCarrito = document.getElementById('contador');
+        if (contadorCarrito) {
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            contadorCarrito.querySelector('p').innerHTML = carrito.length;
+        }
+    }
+
   const userDropdown = document.getElementById('userDropdown');
   const btnLogout = document.getElementById('logoutBtn');
   const btnIcon = document.getElementById('btnIcon');

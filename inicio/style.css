@@ -47,7 +47,10 @@ h2{
 }
 
 /*              Header              */
-
+.swal2-confirm.custom-confirm-button {
+    background-color: var(--background)!important;
+    color: var(--pri) !important;
+}
 .cont-principal{
     width: 100%;
     justify-content: center;

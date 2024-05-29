@@ -42,6 +42,20 @@
         text-transform: uppercase;
         cursor: pointer;
     }
+    a{
+        background: none;
+        border: none;
+        color: var(--pri);
+        font-size: 20px;
+        text-transform: uppercase;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    button:hover, a:hover{
+        cursor: pointer;
+        filter: drop-shadow(0 2px 5px var(--blanco));
+    } 
+
 }
 
 .prod-table{
@@ -77,5 +91,22 @@ tr{
     font-size: 20px;
     i:hover{
         color: var(--pri);
+    }
+}
+@media (max-width: 768px){
+    .prod-table{
+        img{
+            width: 30px;
+        }
+    }
+    .carrito{
+        margin: 10px;
+        font-size: 10px;
+        
+    }
+    .title{
+        th{
+            padding: 3px;
+        }
     }
 }

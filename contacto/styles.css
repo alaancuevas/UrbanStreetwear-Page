@@ -1,3 +1,15 @@
+:root{
+    --background: #504537;
+    --pri: #CDC5BA;
+    --sec: #9F968B;
+    --ter: #756D62;
+    --cuar: #3E3933;
+    --quin: #372C1E;
+    --blanco: #ffffff;
+    --negro: #111111;
+    --oscuro: #313131;
+    --gris: #919191;
+}
 .container{
     max-width: 1200px;
     width: 90%;
@@ -95,7 +107,7 @@
     background-color: #fbe3e3;
 }
 .container-mensaje{
-    background: linear-gradient(180deg,#fff,var(--gris)50%, var(--oscuro)100%);
+    background: linear-gradient(180deg,var(--blanco),var(--pri)50%, var(--background)100%);
     box-shadow: 0  5px 10px var(--oscuro);
     border-radius: 16px;
     align-items: center;
