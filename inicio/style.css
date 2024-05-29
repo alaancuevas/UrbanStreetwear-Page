@@ -10,6 +10,7 @@
     --oscuro: #313131;
     --gris: #919191;
 }
+
 body,html{
     font-family: 'Roboto';
     background-color: var(--pri);
@@ -18,6 +19,15 @@ body,html{
 }
 
 /*              Utilidades              */
+
+.text-spacing{
+    letter-spacing: 7px;
+}
+
+.text-line{
+    border-bottom: 4.5px solid var(--quin);
+    padding-bottom: 20px;
+}
 
 .w-100 {
     width: 100%;
@@ -38,6 +48,7 @@ body,html{
 
 /*              Fuentes              */
 
+
 h1{
     size: 30px;
 }
@@ -45,6 +56,7 @@ h1{
 h2{
     size: 18px;
 }
+
 
 /*              Header              */
 .swal2-confirm.custom-confirm-button {
@@ -113,7 +125,7 @@ h2{
     top: 0;
     width: 100%;
     z-index: 1000;
-    opacity: 70%;
+    opacity: 85%;
 }
 .cont-navBar{
     align-items: center;

@@ -10,19 +10,46 @@
     --oscuro: #313131;
     --gris: #919191;
 }
+
+.cont-navBar{
+    padding: 15px;
+}
+
+.contenedor{
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.registrarse{
+    text-decoration: none;
+}
 .carrito{
     justify-content: center;
     display: block;
-    margin: 60px;
 }
-.total-carrito{
+
+.prod-table{
+    border: 2px solid var(--ter);
+    border-radius: 16px;
+    background-color:var(--pri) ;
+    padding: 20px;
     width: 100%;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .prod-table{
+        width: 80%;
+    }
+}
+
+.total-carrito{
     text-align: center;
     border-radius: 10px;
     background-color: var(--pri);
     color: var(--quin);
     margin-top: 20px;
-    box-shadow: 0  5px 10px var(--oscuro);
 }
 .comprar{
     width: 100%;
@@ -33,52 +60,15 @@
     margin-top: 20px;
     box-shadow: 0  5px 10px var(--oscuro);
 }
-.comprar{
-    button{
-        background: none;
-        border: none;
-        color: var(--pri);
-        font-size: 20px;
-        text-transform: uppercase;
-        cursor: pointer;
-    }
-    a{
-        background: none;
-        border: none;
-        color: var(--pri);
-        font-size: 20px;
-        text-transform: uppercase;
-        cursor: pointer;
-        text-decoration: none;
-    }
-    button:hover, a:hover{
-        cursor: pointer;
-        filter: drop-shadow(0 2px 5px var(--blanco));
-    } 
-
-}
-
-.prod-table{
-    border-radius: 16px;
-    background-color:var(--pri) ;
-    box-shadow: 0  5px 10px var(--oscuro);
-    padding: 20px;
-    width: 100%;
-    height: 100%;
-
-}
 .title{
-    
     th{
         padding: 10px;
         background-color: var(--quin);
         color: var(--sec);
     }
-    
-    
 }
 .table-desc{
-    background-color: #919191;
+    background-color: var(--gris);
 }
 tr{
     text-align: center;
@@ -94,19 +84,18 @@ tr{
     }
 }
 @media (max-width: 768px){
-    .prod-table{
-        img{
-            width: 30px;
-        }
-    }
     .carrito{
         margin: 10px;
-        font-size: 10px;
-        
+        font-size: 14px;
     }
     .title{
         th{
-            padding: 3px;
+            padding: 5px;
         }
     }
+
+}
+
+.footer{
+    margin-top: 60px;
 }

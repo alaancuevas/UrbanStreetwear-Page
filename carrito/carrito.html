@@ -4,10 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../inicio/style.css" />
-  <link rel="stylesheet" href="./styles.css" />
-  <link rel="stylesheet" href="/carrito/carrito.css">
-  <link rel="stylesheet" href="/contacto/styles.css">
-  <link rel="stylesheet" href="/productos/styles.css">
+  <link rel="stylesheet" href="./carrito.css" />
+  <link rel="stylesheet" href="../contacto/styles.css">
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="icon" href="/images/logoUrban.png">
@@ -70,29 +68,28 @@
       <a href="../contacto/contacto.html">Contacto</a>
     </nav>
   </div>
-
-  <div class="carrito" id="carrito">
-    <table class="prod-table">
-        <thead class="title">
-            <th>Producto</th>
-            <th>Descripción</th>
-            <th>Precio</th>
-            <th>Cantidad</th>
-            <th>Subtotal</th>
-            <th>Eliminar</th>
-        </thead>
-        <tbody class="table-desc">
-           
-        </tbody>
-    </table>
-    <div class="total-carrito">
-      <h2 id="total-carrito">Total: $0.00</h2>
-  </div>
-  
-    <div class="comprar" id="btnComprar"><button>Comprar</button></div>
-    <div class="carrito-vacio" id="carrito-vacio" style="display: none;" ></div>
-  </div>
-  <div class="compra-exitosa" id="compraExitosa"></div>
+  <section class="contenedor">
+    <h1 class="centrar-texto shadow">Carrito de Compras</h1>
+    <div class="carrito" id="carrito">
+      <table class="prod-table">
+          <thead class="title">
+              <th>Producto</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+              <th>Subtotal</th>
+              <th>Eliminar</th>
+          </thead>
+          <tbody class="table-desc">
+          </tbody>
+      </table>
+      <div class="total-carrito">
+        <h2 id="total-carrito">Total: $0.00</h2>
+      </div>
+      <div class="button-form-center" id="btnComprar"><button class="button-form">Comprar</button></div>
+      <div class="carrito-vacio" id="carrito-vacio" style="display: none;" ></div>
+    </div>
+    <div class="compra-exitosa" id="compraExitosa"></div>
+  </section>
   <footer>
     <div class="footer">
       

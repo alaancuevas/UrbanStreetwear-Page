@@ -11,16 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const subtotal = precio * producto.cantidad;
             total += subtotal;
             tr.innerHTML = `
-                <td><img src="${producto.imagen}" alt="${producto.nombre}" width="40"></td>
                 <td>${producto.nombre}</td>
                 <td>$${precio.toFixed(2)}</td>
                 <td>${producto.cantidad}</td>
                 <td>$${subtotal.toFixed(2)}</td>
                 <td><button class="eliminar" data-idproducto="${producto.idProducto}"><i class="fa fa-trash" aria-hidden="true"></i></td>
-            `;
+
+                `;
             tbody.appendChild(tr);
         });
-
         const contadorCarrito = document.getElementById('contador');
         if (contadorCarrito) {
             contadorCarrito.querySelector('p').innerHTML = carrito.length;
@@ -63,9 +62,9 @@ document.addEventListener('DOMContentLoaded', (ev) => {
                 <div class='container-mensaje'>
                     <div class='cont-mensaje'>
                         <h1>¡Tu compra se realizó con Éxito!</h1>
-                        <h3>Te enviamos el detalle a </h3>
-                        <p>${localStorage.getItem('emailUsuario')}</p>
-                        <button class='agregar' id='seguir-comprando'><a href='../productos/productos.html'>Seguir comprando</a></button>
+                        <h3>Enviaremos la factura al siguiente correo: <br>
+                        <span>${localStorage.getItem('emailUsuario')}</span></h3>
+                        <a href="../productos/productos.html"><button id='seguir-comprando'>Seguir comprando</button></a>
                     </div>
                 </div>
             `;
@@ -81,28 +80,27 @@ document.addEventListener('DOMContentLoaded', (ev) => {
             contenido.innerHTML = `
             <div class='container-mensaje'>
             <div class='cont-mensaje'>
-                <h3>Aún no te registraste</h3>
-                <p>¡Hacelo y continuá con la compra!</p>
+                <h3>Para realizar una compra, primero tienes que registrarte!</h3>
+                <a href="../registrarse/registrarse.html"><button id='registrarse'>Registrarse</button></a>
             </div>
             </div
             `;
             vacio.appendChild(contenido);
             vacio.style.display = 'block';
-            btnComprar.innerHTML = '<a href="../registrarse/registrarse.html">Ir a registrarse</a>';
         } else  {
             vacio.innerHTML = '';
             let contenido = document.createElement('div');
             contenido.innerHTML = `
             <div class='container-mensaje'>
                 <div class='cont-mensaje'>
-                    <h3>El carrito está vacío</h3>
-                    <p>¡Agregá un producto!</p>
+                    <h3>El carrito está vacío <br>
+                    <span>No se puede realizar la compra porque el carrito está vacío.</span></h3>
+                    <a href="../productos/productos.html"><button id='agregar-productos'>Buscar Productos</button></a>
                 </div>
                 </div>
             `;
             vacio.appendChild(contenido);
             vacio.style.display = 'block';
-            btnComprar.innerHTML = '<a href="../productos/productos.html">Ir a productos</a>';
         }
     });
 });

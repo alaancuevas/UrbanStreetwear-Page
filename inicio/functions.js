@@ -35,7 +35,7 @@ btnIcon.addEventListener('click', function(){
     const itemsMobile = document.querySelector('.items-mobile');
 
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 0) {
+        if (window.scrollY > 165) {
             navbar.classList.add('fixed-nav');
             itemsMobile.classList.add('items-mobile-fixed');
         } else {

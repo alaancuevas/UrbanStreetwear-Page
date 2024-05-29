@@ -104,9 +104,9 @@ function validar() {
             contenido.innerHTML = `
             <div class='container-mensaje'>
             <div class='cont-mensaje'>
-            <h2>Tu consulta se envió Exitosamente!!!</h2>
-            <h3>Nos comunicaremos con vos a</h3>
-            <p>${email.value}</p>
+            <h2>Tu consulta se envió Exitosamente!</h2>
+            <h3>Nos comunicaremos con usted a través de: <br>
+            <span>${email.value}</span></h3>
             <a href="../productos/productos.html"><button id='irAProductos'>Ir a productos</button></a>
             </div>
             </div>

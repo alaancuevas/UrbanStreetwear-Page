@@ -1,3 +1,22 @@
+/*          Fuentes             */
+
+
+.contenedor {
+    h1, h2, a, p{
+        color: var(--quin);
+    }
+
+    h3{
+        color: var(--negro);
+    }
+}
+
+.contenedor-texto{
+    max-width: 1200px;
+    width: 90%;
+    margin: 20px auto;
+}
+
 .container-productos{
     display: flex;
     flex-wrap: wrap;
@@ -5,7 +24,7 @@
 }
 
 .producto{
-    background: linear-gradient(var(--gris)50%, var(--oscuro)100%);
+    background-color: var(--sec);
     box-shadow: 0  5px 10px var(--oscuro);
     border-radius: 16px;
     display: flex;
