@@ -89,8 +89,11 @@ tr{
     }
 }
 @media (max-width: 768px){
+    .contenedor{
+        margin: 15px;
+    }
     .carrito{
-        margin: 10px;
+        
         font-size: 14px;
     }
     .title{
