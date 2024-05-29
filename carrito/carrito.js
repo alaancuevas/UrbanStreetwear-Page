@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', (ev) => {
             localStorage.removeItem('prodAgregado');
             actualizarTabla();
             inicializarContador();
-        }else if(!nombreUsuario){
+        }else if(!nombreUsuario && carrito.length > 0){
             vacio.innerHTML= '';
             let contenido= document.createElement('div');
             contenido.innerHTML = `
@@ -88,8 +88,8 @@ document.addEventListener('DOMContentLoaded', (ev) => {
             `;
             vacio.appendChild(contenido);
             vacio.style.display = 'block';
-            btnComprar.innerHTML = '<a href="../registrarse/registrarse.html">Ir a resgistrarse</a>';
-        } else {
+            btnComprar.innerHTML = '<a href="../registrarse/registrarse.html">Ir a registrarse</a>';
+        } else  {
             vacio.innerHTML = '';
             let contenido = document.createElement('div');
             contenido.innerHTML = `
