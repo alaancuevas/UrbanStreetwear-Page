@@ -252,9 +252,6 @@ h2{
         display: flex;
         border-bottom: 1px solid var(--quin);
     }
-    a:last-of-type{
-        border-bottom: none;
-    }
     a:hover{
         color: var(--blanco);
     }
