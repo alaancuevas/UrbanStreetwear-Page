@@ -1,1 +1,1 @@
-Proyecto final Web!
+Proyecto integrador: Tienda Virtual "Urban StreetWear"
