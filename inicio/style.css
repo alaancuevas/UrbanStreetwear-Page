@@ -190,7 +190,6 @@ h2{
     max-width: 1200px;
     z-index: 1;
     margin-top: 34px;
-    
 }
 .dropdown button {
     color: var(--quin);
@@ -200,8 +199,11 @@ h2{
     justify-content: right;
     align-items: right;
     border: none;
-    background: var(--sec);
+    background: linear-gradient(120deg, var(--pri), var(--sec)90%);
     cursor: pointer;
+    border-bottom: 1px solid var(--quin);
+    border-right: 1px solid var(--quin);
+    border-left: 1px solid var(--quin);
 }
 
 .dropdown button:hover {
