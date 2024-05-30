@@ -93,6 +93,11 @@ h2{
     img{
         filter: drop-shadow(5px 5px 5px);
     }
+    a{
+        color: var(--negro);
+        text-decoration: none;
+        cursor: default;
+    }
 }
 .redes{
     margin-right: 20px;
