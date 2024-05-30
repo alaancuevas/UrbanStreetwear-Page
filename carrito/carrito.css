@@ -12,7 +12,7 @@
 }
 
 .cont-navBar{
-    padding: 15px;
+    padding: 12px;
 }
 
 .contenedor{
@@ -25,8 +25,8 @@
     text-decoration: none;
 }
 .carrito{
-    justify-content: center;
     display: block;
+    justify-content: center;
 }
 .agregar a{
     text-decoration: none;
@@ -34,12 +34,12 @@
 }
 
 .prod-table{
+    max-width: 100%;
+    margin: 0 auto;
     border: 2px solid var(--ter);
     border-radius: 16px;
     background-color:var(--pri) ;
     padding: 20px;
-    width: 100%;
-    margin: 0 auto;
 }
 
 @media (min-width: 768px) {
@@ -88,20 +88,27 @@ tr{
         color: var(--pri);
     }
 }
-@media (max-width: 768px){
-    .contenedor{
-        margin: 15px;
-    }
+
+@media (max-width: 620px) {
     .carrito{
-        
-        font-size: 14px;
+        font-size: 15px;
     }
     .title{
         th{
             padding: 5px;
         }
     }
+}
 
+@media (max-width: 460px){
+    .carrito{
+        font-size: 11px;
+    }
+    .title{
+        th{
+            padding: 5px;
+        }
+    }
 }
 
 .footer{
