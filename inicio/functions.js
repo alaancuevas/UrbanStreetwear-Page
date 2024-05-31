@@ -113,7 +113,7 @@ carrusel.addEventListener('mouseout', play);
 const cambiarFoto = (direccion) => {
     const anchoImagen = imagenes[0].clientWidth;
     let nuevaPosicion = carrusel.scrollLeft;
-    if (direccion === 'izquierda') {
+    if (direccion === 'derecha') {
         nuevaPosicion -= anchoImagen;
         if (nuevaPosicion < 0) {
             carrusel.scrollLeft = maximo - imagenes[0].clientWidth; // Salta al último clon
